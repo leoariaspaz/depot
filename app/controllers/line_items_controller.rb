@@ -30,8 +30,12 @@ class LineItemsController < ApplicationController
     # @line_item = LineItem.new(line_item_params)
 
     respond_to do |format|
+      logger.debug format
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html do 
+          @current_item = @line_item
+          render partial: 'carts/cart', locals: { cart: @cart } 
+        end
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }

@@ -43,3 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
+# agregadas por LAP
+# 2015-08-13
+gem 'jquery-ui-rails'
+# gem 'jquery-turbolinks'
