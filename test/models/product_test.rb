@@ -57,6 +57,6 @@ class ProductTest < ActiveSupport::TestCase
                           price: 1,
                           image_url: "fred.gif")
     assert !product.save
-    assert_equal I18n.t('activerecord.errors.messages.taken'), product.errors[:title].join("; ")
+    assert_equal I18n.t('errors.messages.taken'), product.errors[:title].join("; ")
   end
 end
