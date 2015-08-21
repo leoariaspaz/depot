@@ -47,3 +47,5 @@ end
 # 2015-08-13
 gem 'jquery-ui-rails'
 # gem 'jquery-turbolinks'
+
+gem 'will_paginate'

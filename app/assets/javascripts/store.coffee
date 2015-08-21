@@ -7,5 +7,7 @@ $(document).on "ready page:load", ->
 	  $('#cart').html xhr.responseText
 
 $(document).on "page:update", ->
-  $('#cart #current_item').removeClass 'item_added',  1000, "easeInBack"
-  if $( "#cart" ).is( ":hidden" ) then $( "#cart" ).slideDown( "slow" );
+  $('#cart #current_item').removeClass 'item_added', 1000, "easeInBack"
+  if $("#cart").is(":hidden")
+    $("#cart").slideDown "slow"
+  if $("#notice").is(":visible") and ($("#cart").has("*").length > 0) then $("#notice").hide()

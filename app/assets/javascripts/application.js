@@ -16,4 +16,4 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on("ready page:load",	Turbolinks.ProgressBar.enable);
+// $(document).on("ready page:load",	Turbolinks.ProgressBar.enable);
