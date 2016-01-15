@@ -10,8 +10,14 @@
 <body id="store">
 
 	<div id="banner">
+		<%= form_tag store_path, class: 'locale', method: :get do %>
+			<%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), 
+						onchange: 'this.form.submit()' %>
+			<%= submit_tag 'submit' %>
+			<%= javascript_tag "$('.locale input').each(function(){ $(this).hide(); });" %>
+		<% end %>
 		<%= image_tag "logo.png" %>
-		<%= @page_title || "Pragmatic Bookshelf" %>
+		<%= @page_title || t('layout.titleapp') %>
 	</div>
 
 	<div id="columns">
@@ -22,10 +28,10 @@
 				<% end %>
 			<% end %>
 
-			<a href="http://...">Home</a><br/>
-			<a href="http://...">Questions</a><br/>
-			<a href="http://...">News</a><br/>
-			<a href="http://...">Contact</a><br/>
+			<a href="http://..."><%= t('.home') %></a><br/>
+			<a href="http://..."><%= t('.questions') %></a><br/>
+			<a href="http://..."><%= t('.news') %></a><br/>
+			<a href="http://..."><%= t('.contact') %></a><br/>
 
 			<% if session[:user_id] %>
 				<br/>
